@@ -1,4 +1,4 @@
-// Stock Market Portfolio App By Patrick
+// Stock Market Portfolio App by Patrick
 const express = require('express');
 const app = express();
 const exphbs  = require('express-handlebars');
