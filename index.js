@@ -10,13 +10,16 @@ const PORT = process.env.PORT || 5000;
 
 
 // API KEY pk_126fa11f22644aa3b471665f71e7220e
-request('https://cloud.iexapis.com/stable/stock/fb/quote?token=pk_126fa11f22644aa3b471665f71e7220e', { json: true }, (err, res, body) => {
+// create call_api function
+function call_api() {
+    request('https://cloud.iexapis.com/stable/stock/fb/quote?token=pk_126fa11f22644aa3b471665f71e7220e', { json: true }, (err, res, body) => {
     if (err) {return console.log(err);}
     if (res.statusCode === 200){
-        console.log(body);
+        // console.log(body);
+        return body
     };
 });
-
+}
 
 
 
@@ -28,8 +31,10 @@ const otherstuff = "hello there, this is other stuff!";
 
 //Set Handlebar routes
 app.get('/', function (req, res) {
+    const api = call_api();
+    console.log(api);
     res.render('home', {
-        stuff: otherstuff
+        stock: api
     });
 });
 
