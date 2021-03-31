@@ -1,3 +1,0 @@
-My App
-
-https://mynodestockapp.herokuapp.com/ | https://git.heroku.com/mynodestockapp.git
